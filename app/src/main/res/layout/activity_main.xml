@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Fluff Finder!"
+            android:layout_marginLeft="10dp"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fill out the quiz below to find your perfect fluff match."
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint ="Let's start with your name."
+            android:layout_marginLeft="10dp"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tell us about your home."
+            android:layout_marginLeft="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/home_apartment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apartment or condo"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="24dp"
+                    android:onClick="homeRadioButtonClicked"/>
+
+                <RadioButton
+                    android:id="@+id/home_yard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home, with yard"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="24dp"
+                    android:onClick="homeRadioButtonClicked"/>
+
+                <RadioButton
+                    android:id="@+id/home_no_yard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home, no yard"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="24dp"
+                    android:onClick="homeRadioButtonClicked"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What energy level are you?"
+            android:layout_marginLeft="10dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low, mostly sedentary"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium, enjoy walks"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High, regularly runs or hikes"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What size(s) of fluffs are you interested in?"
+            android:layout_marginLeft="10dp"/>
+
+        <CheckBox
+            android:id="@+id/small_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small (1-15 pounds)"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <CheckBox
+            android:id="@+id/medium_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium (15-40 pounds)"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <CheckBox
+            android:id="@+id/large_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large (40-100 pounds)"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How many hours per day are you typically at home?"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="10dp"
+                android:text="-"
+                android:layout_marginBottom="16dp"
+                android:onClick="decrement" />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="8dp"
+                android:text="+"
+                android:onClick="increment" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find Your Fluff"
+            android:onClick="submitQuiz"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/quiz_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiz Summary" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>
