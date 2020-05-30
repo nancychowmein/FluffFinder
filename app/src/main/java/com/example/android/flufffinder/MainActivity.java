@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -41,9 +44,25 @@ public class MainActivity extends AppCompatActivity {
         CheckBox largeCheckBox = (CheckBox) findViewById(R.id.large_checkbox);
         boolean wantsLarge = largeCheckBox.isChecked();
 
-        String message = createQuizResult(wantsSmall, wantsMedium, wantsLarge, name);
+        // Create map of results
+        HashMap<Integer, String> quizMap = new HashMap<Integer, String>();
 
-        displayMessage(message);
+        quizMap.put(1, "Breed 1");
+        quizMap.put(2, "Breed 2");
+        quizMap.put(3, "Breed 3");
+        quizMap.put(4, "Breed 4");
+
+        System.out.println(quizMap);
+
+
+        //Pair<Int, Int> getResponse(String home, String energy, String size, int hours){
+         //   key = "" + home + ":" + energy + ":" + size + ":" + hours;
+          //  return mappings.get(key);
+       // }
+
+       // String message = createQuizResult(wantsSmall, wantsMedium, wantsLarge, name);
+
+       // displayMessage(message);
 
     }
 
